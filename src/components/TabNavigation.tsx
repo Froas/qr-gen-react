@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Tab } from '../utils/types';
+import type { Tab } from '../types';
 
 interface TabNavigationProps {
   tabs: Tab[];

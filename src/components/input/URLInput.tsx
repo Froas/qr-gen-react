@@ -1,5 +1,5 @@
 import React from 'react';
-import ShinyText from './react-bits/ShinyText/ShinyText';
+import ShinyText from '../react-bits/ShinyText/ShinyText';
 interface URLInputProps {
   value: string;
   onChange: (value: string) => void;

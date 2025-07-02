@@ -1,5 +1,5 @@
 import React from 'react';
-import ShinyText from './react-bits/ShinyText/ShinyText';
+import ShinyText from '../react-bits/ShinyText/ShinyText';
 
 interface TextInputProps {
   value: string;
