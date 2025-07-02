@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import { Link, MessageSquare, User, QrCode } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { Link, MessageSquare, User } from 'lucide-react';
 import type  { ContactInfo, Tab } from '../utils/types';
 import { TabNavigation } from './TabNavigation';
 import { URLInput } from './URLInput';

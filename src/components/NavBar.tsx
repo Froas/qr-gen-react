@@ -1,4 +1,4 @@
-import { Book, Github, Code, Play, QrCode } from 'lucide-react';
+import { Book, Github, Play, QrCode } from 'lucide-react';
 import { NavLink } from "react-router-dom";
 
 type NavBarProps = {}
