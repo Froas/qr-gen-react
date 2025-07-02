@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, forwardRef, useImperativeHandle } from 'react';
 import { QrCode } from 'lucide-react';
 import { QRGenerator } from '../utils/qrGenerator';
 
@@ -6,8 +6,10 @@ interface QRDisplayProps {
   qrData: string;
 }
 
-export const QRDisplay: React.FC<QRDisplayProps> = ({ qrData }) => {
+export const QRDisplay = forwardRef<HTMLDivElement, QRDisplayProps>(({ qrData }, ref) => {
   const qrContainerRef = useRef<HTMLDivElement>(null);
+  
+  useImperativeHandle(ref, () => qrContainerRef.current as HTMLDivElement);
 
   useEffect(() => {
     if (!qrData.trim() || !qrContainerRef.current) {
@@ -51,4 +53,4 @@ export const QRDisplay: React.FC<QRDisplayProps> = ({ qrData }) => {
       )}
     </div>
   );
-};
+});

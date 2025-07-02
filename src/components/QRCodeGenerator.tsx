@@ -226,7 +226,7 @@ export const QRCodeGenerator = () => {
                 <h2 className="text-2xl font-semibold text-gray-800">
                   <DecryptedText text='Generated QR Code'/></h2>
                 
-                <QRDisplay qrData={qrData} />
+                <QRDisplay qrData={qrData} ref={qrContainerRef} />
 
                 <ActionButtons 
                   qrData={qrData} 
