@@ -12,6 +12,7 @@ import { useQRData } from '../hooks/useQRData';
 import Particles from './react-bits/Particles';
 import DecryptedText from './react-bits/DecryptedText/DecryptedText';
 import AnimatedContent from './react-bits/AnimatedContent';
+import SplitText from './react-bits/SplitText/SplitText'
 
 export const QRCodeGenerator = () => {
   const [activeTab, setActiveTab] = useState('url');
@@ -89,12 +90,22 @@ export const QRCodeGenerator = () => {
             </div> */}
 
             <h1 className="text-4xl font-bold bg-gradient-to-r from-red-600 to-blue-600 bg-clip-text text-transparent mb-2">
-              <DecryptedText 
+              {/* <DecryptedText 
                 text='QRify'
                 speed={100}
                 maxIterations={20}
                 animateOn='view'
-              /> 
+              />  */}
+              <SplitText 
+                text='QRify'
+                delay={200}
+                splitType="chars"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                rootMargin="-100px"
+                textAlign="center"
+                className="leading-[1.2] py-2"
+              />
             </h1>
           </div>
           
@@ -121,7 +132,7 @@ export const QRCodeGenerator = () => {
           threshold={0.2}
           delay={0.6} 
         >
-        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden p-12 min-h-[600px] min-w-[1000px]">
+        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden p-4 sm:p-8 md:p-12 min-h-[400px] sm:min-h-[500px] md:min-h-[600px] w-full max-w-4xl mx-auto">
           <TabNavigation 
             tabs={tabs} 
             activeTab={activeTab} 

@@ -22,7 +22,7 @@ export const ContactInput: React.FC<ContactInputProps> = ({ contactInfo, onChang
             type="text"
             value={contactInfo.firstName}
             onChange={(e) => updateField('firstName', e.target.value)}
-            placeholder="John"
+            placeholder="Ichigo"
             className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
           />
         </div>
@@ -34,7 +34,7 @@ export const ContactInput: React.FC<ContactInputProps> = ({ contactInfo, onChang
             type="text"
             value={contactInfo.lastName}
             onChange={(e) => updateField('lastName', e.target.value)}
-            placeholder="Doe"
+            placeholder="Kurosaki"
             className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
           />
         </div>
@@ -48,7 +48,7 @@ export const ContactInput: React.FC<ContactInputProps> = ({ contactInfo, onChang
           type="tel"
           value={contactInfo.phone}
           onChange={(e) => updateField('phone', e.target.value)}
-          placeholder="+1 (555) 123-4567"
+          placeholder="+81 90-1234-5678"
           className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
         />
       </div>
@@ -61,7 +61,7 @@ export const ContactInput: React.FC<ContactInputProps> = ({ contactInfo, onChang
           type="email"
           value={contactInfo.email}
           onChange={(e) => updateField('email', e.target.value)}
-          placeholder="john.doe@example.com"
+          placeholder="ichigo.kurosaki@example.com"
           className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
         />
       </div>

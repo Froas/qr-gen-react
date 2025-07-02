@@ -7,7 +7,7 @@ export const Footer = ({}: FooterProps) => (
     <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center px-4 space-y-3 md:space-y-0">
       <div className="flex items-center space-x-3">
         <QrCode className="w-6 h-6 text-blue-600" aria-label="QRify" />
-        <span className="font-bold text-gray-700">QRify</span>
+        <span className="font-bold bg-gradient-to-r from-red-600 to-blue-600 bg-clip-text text-transparent">QRify</span>
         <span className="text-gray-400 text-xs hidden sm:inline-block">© {new Date().getFullYear()}</span>
       </div>
       <div className="flex items-center space-x-4 text-gray-600 text-sm">
