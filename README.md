@@ -18,12 +18,25 @@ QRify is a modern web app for instantly generating QR codes for URLs, text, and 
 
 ---
 
+## ⚡️ How QR Generation Works
+
+QR codes are generated entirely in the browser:
+
+* Uses the [QRious](https://github.com/neocotic/qrious) library **via CDN** for high-quality, on-the-fly QR code creation.
+* The QRious script is loaded **dynamically** if it’s not already present in the browser window.
+* QR codes are rendered to a `<canvas>` element and displayed instantly via a React ref.
+* **Fallback:** If QRious fails or cannot be loaded, QRify gracefully falls back to generating a QR code image using [Google Charts API](https://developers.google.com/chart/infographics/docs/qr_codes) or [QR Server](https://goqr.me/api/).
+* *No data is sent or stored on any server — everything works right in your browser!*
+
+
+---
+
 ## 🛠️ Tech Stack
 
 * [React](https://react.dev/)
 * [TypeScript](https://www.typescriptlang.org/)
 * [Tailwind CSS](https://tailwindcss.com/)
-
+* [QRious (CDN)](https://cdnjs.com/libraries/qrious) (for QR code generation)
 ---
 
 ## 💻 Getting Started
