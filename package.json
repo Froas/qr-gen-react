@@ -1,15 +1,19 @@
 {
   "name": "qr-gen-react",
+  "homepage": "https://froas.github.io/qr-gen-react",
   "private": true,
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "framer-motion": "^12.22.0",
+    "gh-pages": "^6.3.0",
     "gsap": "^3.13.0",
     "lucide-react": "^0.525.0",
     "ogl": "^1.0.11",

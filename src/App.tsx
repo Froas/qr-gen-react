@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { QRCodeGenerator as HomePage } from "./components/QRCodeGenerator"
 import { NavBar } from "./components/NavBar"
 import DocsPage from "./components/DocsPage";
@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <>
-    <BrowserRouter>
+    <HashRouter >
       <NavBar/>
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -16,7 +16,7 @@ function App() {
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer/>
-    </BrowserRouter>
+    </HashRouter >
       
     </>
   )
