@@ -1,69 +1,90 @@
-# React + TypeScript + Vite
+# QRify
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+QRify is a modern web app for instantly generating QR codes for URLs, text, and contact information. Built with **React**, **TypeScript**, and **Tailwind CSS** for a lightning-fast and beautiful user experience.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+* **Ultra-fast** QR code generation
+* Generate QR codes for:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+  * **URLs**
+  * **Text**
+  * **Contact info** (vCard)
+* Download or copy your QR code
+* Clean, minimal, responsive UI
+* Easy to install and run locally
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🛠️ Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+* [React](https://react.dev/)
+* [TypeScript](https://www.typescriptlang.org/)
+* [Tailwind CSS](https://tailwindcss.com/)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 💻 Getting Started
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. **Clone the repo:**
+
+   ```sh
+   git https://github.com/Froas/qr-gen-react.git
+   cd qr-gen-react
+   ```
+2. **Install dependencies:**
+
+   ```sh
+   npm install
+   # or
+   yarn install
+   ```
+3. **Run locally:**
+
+   ```sh
+   npm run dev
+   # or
+   yarn dev
+   ```
+   (The app uses [Vite](https://vite.dev) for local development)
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
+## 💡 Use Cases
+
+* Share website links as QR codes
+* Generate QR for plain text (messages, codes, etc.)
+* Instantly create vCards (contacts) as QR codes
+* Download or copy generated codes for use anywhere
+
+---
+
+## ✨ Coming Soon / TODO
+
+* 📖 Documentation page
+* 📲 Share QR code directly (social, etc.)
+* 🖼️ Add custom logo/image to center of QR code
+
+---
+
+## 📄 License
+
+[MIT](LICENSE)
+---
+
+## 🔗 Links
+
+**Made with ❤️ by [Froas](https://github.com/Froas)**
+
+---
+
+## 🙌 Contributing
+
+Pull requests and issues are welcome!
+
+---
+
+**Enjoy using QRify!**

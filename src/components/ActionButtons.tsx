@@ -51,7 +51,7 @@ export const ActionButtons: React.FC<ActionButtonsProps> = ({
     <div className="flex gap-4 w-full max-w-sm">
       <button
         onClick={downloadQRCode}
-        className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-200 font-medium shadow-lg"
+        className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-red-600 to-blue-600 text-white rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-200 font-medium shadow-lg"
       >
         <Download className="w-4 h-4" />
         Download
