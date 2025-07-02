@@ -1,4 +1,4 @@
-import { Book, Github, Code, Play } from 'lucide-react';
+import { Book, Github, Code, Play, QrCode } from 'lucide-react';
 import { NavLink } from "react-router-dom";
 
 type NavBarProps = {}
@@ -11,12 +11,14 @@ export const NavBar = ({}: NavBarProps) => {
 
     return (
         <>
-            <nav className="bg-gradient-to-r from-black/30 to-blue-600/30 text-white shadow-lg">
+            <nav className="bg-gradient-to-r from-red-800/30 to-blue-600/30 text-white shadow-lg">
                 <div className="max-w-6xl mx-auto px-4">
                     <div className="flex justify-between items-center h-16">
                     <div className="flex items-center space-x-2">
-                        <Code className="w-8 h-8" />
-                        <span className="text-xl font-bold">QRify</span>
+                    <QrCode className="w-8 h-8" />
+                    <span className="text-xl font-bold bg-gradient-to-r from-red-600 to-blue-600 bg-clip-text text-transparent">
+                        QRify
+                    </span>
                     </div>
                     <div className="flex space-x-8">
                         <NavLink to="/" className={linkClasses}>

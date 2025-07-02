@@ -74,19 +74,19 @@ export const QRCodeGenerator = () => {
 
   return (
     <>
-    <div className="min-h-screen from-red-50 via-blue-50 to-indigo-100 p-4">
+    <div className=" from-red-50 via-blue-50 to-indigo-100 p-4">
       <div className="fixed inset-0 -z-10">
         <Particles />
       </div>
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-8">
+        <div className="text-center mb-8 mt-20">
           <div className='flex  justify-center items-center gap-4'>
-            <div className="inline-flex items-center justify-center w-16 h-16
+            {/* <div className="inline-flex items-center justify-center w-16 h-16
                   bg-white/5 backdrop-blur
                   rounded-2xl ring-1 ring-gray-200
                   mb-4">
               <QrCode className="w-8 h-8 text-gray-800" />
-            </div>
+            </div> */}
 
             <h1 className="text-4xl font-bold bg-gradient-to-r from-red-600 to-blue-600 bg-clip-text text-transparent mb-2">
               <DecryptedText 
@@ -121,7 +121,7 @@ export const QRCodeGenerator = () => {
           threshold={0.2}
           delay={0.6} 
         >
-        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
+        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden p-12 min-h-[600px] min-w-[1000px]">
           <TabNavigation 
             tabs={tabs} 
             activeTab={activeTab} 
