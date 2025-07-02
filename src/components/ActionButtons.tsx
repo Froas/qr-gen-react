@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { Download, Copy, Check, Send } from 'lucide-react';
+import React, { useState } from 'react'
+import { Download, Copy, Check } from 'lucide-react'
 
 interface ActionButtonsProps {
-  qrData: string;
-  activeTab: string;
-  qrContainerRef: React.RefObject<HTMLDivElement | null>;
+  qrData: string
+  activeTab: string
+  qrContainerRef: React.RefObject<HTMLDivElement | null>
 }
 
 export const ActionButtons: React.FC<ActionButtonsProps> = ({ 
@@ -12,45 +12,45 @@ export const ActionButtons: React.FC<ActionButtonsProps> = ({
   activeTab, 
   qrContainerRef 
 }) => {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState(false)
   const [qrCopied, setQRCopied] = useState(false)
 
   const downloadQRCode = () => {
-    if (!qrData) return;
+    if (!qrData) return
     
-    const canvas = qrContainerRef.current?.querySelector('canvas');
-    const img = qrContainerRef.current?.querySelector('img');
+    const canvas = qrContainerRef.current?.querySelector('canvas')
+    const img = qrContainerRef.current?.querySelector('img')
     
     if (canvas) {
-      const link = document.createElement('a');
-      link.download = `qr-code-${activeTab}.png`;
-      link.href = canvas.toDataURL();
-      link.click();
+      const link = document.createElement('a')
+      link.download = `qr-code-${activeTab}.png`
+      link.href = canvas.toDataURL()
+      link.click()
     } else if (img) {
-      const link = document.createElement('a');
-      link.download = `qr-code-${activeTab}.png`;
-      link.href = img.src;
-      link.click();
+      const link = document.createElement('a')
+      link.download = `qr-code-${activeTab}.png`
+      link.href = img.src
+      link.click()
     }
-  };
+  }
 
   const copyToClipboard = async () => {
     if (qrData) {
       try {
-        await navigator.clipboard.writeText(qrData);
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
+        await navigator.clipboard.writeText(qrData)
+        setCopied(true)
+        setTimeout(() => setCopied(false), 2000)
       } catch (err) {
-        console.error('Failed to copy text: ', err);
+        console.error('Failed to copy text: ', err)
       }
     }
-  };
+  }
 
   const copyQRCodeToClipboard = async () => {
-    const img = qrContainerRef.current?.querySelector('img');
-    const canvas = qrContainerRef.current?.querySelector('canvas');
+    const img = qrContainerRef.current?.querySelector('img')
+    const canvas = qrContainerRef.current?.querySelector('canvas')
     try {
-      let blob: Blob | null = null;
+      let blob: Blob | null = null
       
       if (img) {
         const response =await fetch(img.src)
@@ -58,26 +58,58 @@ export const ActionButtons: React.FC<ActionButtonsProps> = ({
       } else if (canvas) {
         const dataUrl = canvas.toDataURL('image/png')
         const res = await fetch(dataUrl)
-        blob = await res.blob();
+        blob = await res.blob()
       } else {
         console.info('There is no img or canvas: ', qrContainerRef.current)
       }
        
       if (blob) {
-        const clipboardItem = new window.ClipboardItem({ [blob.type]: blob });
-        await navigator.clipboard.write([clipboardItem]);
-        setQRCopied(true);
-        setTimeout(() => setQRCopied(false), 2000);
-        console.log('Copied QR successfully!');
+        const clipboardItem = new window.ClipboardItem({ [blob.type]: blob })
+        await navigator.clipboard.write([clipboardItem])
+        setQRCopied(true)
+        setTimeout(() => setQRCopied(false), 2000)
+        console.log('Copied QR successfully!')
       } else {
-        console.error('No blob found to copy!');
+        console.error('No blob found to copy!')
       }
     } catch(err) {
       console.error('Failed to copy qrcode: ', err)
     }
   }
 
-  if (!qrData) return null;
+//  const shareQr = async () => {
+//   const img = qrContainerRef.current?.querySelector('img')
+//   const canvas = qrContainerRef.current?.querySelector('canvas')
+//   let file
+
+//   if (img) {
+//     const response = await fetch(img.src)
+//     const blob = await response.blob()
+//     file = new File([blob], "qrcode.png", { type: blob.type })
+//   } else if (canvas) {
+//     const dataUrl = canvas.toDataURL("image/png")
+//     const res = await fetch(dataUrl)
+//     const blob = await res.blob()
+//     file = new File([blob], "qrcode.png", { type: blob.type })
+//   }
+
+//   if (file && navigator.canShare && navigator.canShare({ files: [file] })) {
+//     try {
+//       await navigator.share({
+//         files: [file],
+//         title: "QR Code",
+//         text: "Вот мой QR-код!"
+//       })
+//       console.log('QR shared!')
+//     } catch (err) {
+//       console.error('Sharing failed:', err)
+//     }
+//   } else {
+//     alert('Your browser could not suppot it')
+//   }
+// }
+
+  if (!qrData) return null
 
   return (
     <div className='flex flex-col'>
@@ -108,13 +140,13 @@ export const ActionButtons: React.FC<ActionButtonsProps> = ({
         </button>
       </div>
       <div className="flex gap-4 mt-4 w-full max-w-sm items-stretch">
-        <button
-          onClick={downloadQRCode}
+        {/* <button
+          onClick={shareQr}
           className="h-12 flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-red-600 text-white rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-200 font-medium shadow-lg"
         >
           <Send className="w-4 h-4" />
           Share it
-        </button>
+        </button> */}
         
         <button
           onClick={copyQRCodeToClipboard}
@@ -128,11 +160,11 @@ export const ActionButtons: React.FC<ActionButtonsProps> = ({
           ) : (
             <>
               <Copy className="w-4 h-4" />
-              Copy QR 
+              Copy QR code 
             </>
           )}
         </button>
       </div>
     </div>
-  );
-};
+  )
+}

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, forwardRef, useImperativeHandle } from 'react';
+import { useRef, useEffect, forwardRef, useImperativeHandle } from 'react';
 import { QrCode } from 'lucide-react';
 import { QRGenerator } from '../utils/qrGenerator';
 

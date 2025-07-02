@@ -1,4 +1,3 @@
-import { body } from "framer-motion/client";
 import type  { ContactInfo, EmailInfo, CallInfo, SMSInfo, WiFiInfo  } from "../types";
 
 export const formatUrl = (url: string): string => {
