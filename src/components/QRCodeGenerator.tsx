@@ -153,7 +153,7 @@ export const QRCodeGenerator = () => {
               <QrCode className="w-8 h-8 text-gray-800" />
             </div> */}
 
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-red-600 to-blue-600 bg-clip-text text-transparent mb-2">
+            <h1 className="text-4xl font-bold mb-2 gradient-text-universal">
               {/* <DecryptedText 
                 text='QRify'
                 speed={100}
@@ -168,19 +168,19 @@ export const QRCodeGenerator = () => {
                 to={{ opacity: 1, y: 0 }}
                 rootMargin="-100px"
                 textAlign="center"
-                className="leading-[1.2] py-2"
+                className="leading-[1.2] py-2 text-gray-900"
               />
             </h1>
           </div>
           
           <p className="text-gray-600 text-lg">
-             <DecryptedText 
+            <DecryptedText 
               text='Generate QR codes for URLs, text, and contact info, email, callsm SMS, and WiFi'
               speed={100}
               maxIterations={20}
               animateOn='view'
             /> 
-           
+          
           </p>
 
         </div>

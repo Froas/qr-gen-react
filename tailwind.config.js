@@ -4,7 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
- theme: {
+  theme: {
     extend: {
       fontFamily: {
         marker: ['"Permanent Marker"', 'cursive'],
@@ -14,7 +14,7 @@ export default {
           '0%': { 'background-position': '100%' },
           '100%': { 'background-position': '-100%' },
         },
-         glitch: {
+        glitch: {
           "0%": { "clip-path": "inset(20% 0 50% 0)" },
           "5%": { "clip-path": "inset(10% 0 60% 0)" },
           "10%": { "clip-path": "inset(15% 0 55% 0)" },
@@ -40,7 +40,7 @@ export default {
       },
       animation: {
         shine: 'shine 5s linear infinite',
-         "glitch-after": "glitch var(--after-duration) infinite linear alternate-reverse",
+        "glitch-after": "glitch var(--after-duration) infinite linear alternate-reverse",
         "glitch-before": "glitch var(--before-duration) infinite linear alternate-reverse",
       },
     },

@@ -8,10 +8,14 @@ QRify is a modern web app for instantly generating QR codes for URLs, text, and 
 
 * **Ultra-fast** QR code generation
 * Generate QR codes for:
-
   * **URLs**
   * **Text**
   * **Contact info** (vCard)
+  * **Email**
+  * **Phone**
+  * **Call**
+  * **WiFi**
+
 * Download or copy your QR code
 * Clean, minimal, responsive UI
 * Easy to install and run locally

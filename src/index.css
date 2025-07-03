@@ -1,3 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.gradient-text-universal {
+    background: linear-gradient(to right, #dc2626, #2563eb);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.gradient-text-universal > * {
+    background: linear-gradient(to right, #dc2626, #2563eb);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+
+.gradient-text-universal * {
+    background: inherit;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+
+@supports (-webkit-background-clip: text) {
+    .gradient-text-universal,
+    .gradient-text-universal *,
+    .gradient-text-universal > * {
+        background: linear-gradient(to right, #dc2626, #2563eb) !important;
+        -webkit-background-clip: text !important;
+        background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        color: transparent !important;
+    } 
+}
