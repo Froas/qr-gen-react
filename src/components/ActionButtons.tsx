@@ -98,7 +98,7 @@ export const ActionButtons: React.FC<ActionButtonsProps> = ({
 //       await navigator.share({
 //         files: [file],
 //         title: "QR Code",
-//         text: "Вот мой QR-код!"
+//         text: ""
 //       })
 //       console.log('QR shared!')
 //     } catch (err) {
